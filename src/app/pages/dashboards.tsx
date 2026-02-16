@@ -28,13 +28,13 @@ import {
   Terminal as TerminalIcon,
   FileText as FileTextIcon
 } from "lucide-react";
-import { Button, Input, Card, Badge, cn } from "@/app/components/lms-ui";
-import { ImageWithFallback } from "@/app/components/figma/ImageWithFallback";
+import { Button, Input, Card, Badge, cn } from "../components/lms-ui";
+import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { 
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, 
   AreaChart, Area, PieChart, Pie, Cell 
 } from "recharts";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 
 // Admin Sub-components
 import { StatsOverview } from "../components/admin/StatsOverview";

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Input, Card, cn } from "@/app/components/lms-ui";
+import { Button, Input, Card, cn } from "../components/lms-ui";
 import { 
   Mail as MailIcon, 
   Lock as LockIcon, 
@@ -9,8 +9,8 @@ import {
   CheckCircle2 as CheckCircle2Icon, 
   ArrowLeft as ArrowLeftIcon 
 } from "lucide-react";
-import { ImageWithFallback } from "@/app/components/figma/ImageWithFallback";
-import { motion } from "motion/react";
+import { ImageWithFallback } from "../components/figma/ImageWithFallback";
+import { motion } from "framer-motion";
 
 interface AuthProps {
   onNavigate: (page: string) => void;

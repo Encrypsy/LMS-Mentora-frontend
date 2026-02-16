@@ -9,8 +9,8 @@ import {
   HelpCircle as HelpCircleIcon,
   ChevronLeft as ChevronLeftIcon
 } from "lucide-react";
-import { Button, Card, Badge, cn } from "@/app/components/lms-ui";
-import { motion, AnimatePresence } from "motion/react";
+import { Button, Card, Badge, cn } from "../lms-ui";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface Question {
   id: number;

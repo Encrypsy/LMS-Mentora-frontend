@@ -15,7 +15,7 @@ import {
   Check as CheckIcon,
   CheckCheck as CheckCheckIcon
 } from "lucide-react";
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Button, Input, Card, Badge, cn } from "../lms-ui";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 

@@ -19,9 +19,9 @@ import {
   Trophy as TrophyIcon, 
   Lock as LockIcon 
 } from "lucide-react";
-import { Button, Input, Card, Badge, cn } from "@/app/components/lms-ui";
-import { ImageWithFallback } from "@/app/components/figma/ImageWithFallback";
-import { motion } from "motion/react";
+import { Button, Input, Card, Badge, cn } from "../components/lms-ui";
+import { ImageWithFallback } from "../components/figma/ImageWithFallback";
+import { motion } from "framer-motion";
 
 /** Shared Header */
 export const Header = ({ onNavigate, role = 'student' }: { onNavigate: (p: string) => void, role?: string }) => (
@@ -523,7 +523,7 @@ export const VideoPage = ({ onNavigate }: { onNavigate: (p: string) => void }) =
   );
 };
 
-import { QuizPlayer } from "@/app/components/quiz/QuizComponents";
+import { QuizPlayer } from "../components/quiz/QuizComponents";
 
 /** Quiz Page */
 export const QuizPage = ({ onNavigate }: { onNavigate: (p: string) => void }) => {

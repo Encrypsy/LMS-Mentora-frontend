@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Toaster, toast } from "sonner";
-import { LoginPage, SignUpPage, ForgotPasswordPage } from "@/app/pages/auth";
-import { StudentHome, CourseDetailPage, VideoPage, AssignmentPage, QuizPage, Header } from "@/app/pages/student";
-import { TeacherDashboard, AdminDashboard, ProfilePage } from "@/app/pages/dashboards";
-import { ChatSystem } from "@/app/components/chat/ChatSystem";
+import { LoginPage, SignUpPage, ForgotPasswordPage } from "../app/pages/auth";
+import { StudentHome, CourseDetailPage, VideoPage, AssignmentPage, QuizPage, Header } from "../app/pages/student";
+import { TeacherDashboard, AdminDashboard, ProfilePage } from "../app/pages/dashboards";
+import { ChatSystem } from "../app/components/chat/ChatSystem";
 
 type Page = 
   | 'login' 
@@ -41,30 +41,30 @@ export default function App() {
   const renderPage = () => {
     switch (currentPage) {
       case 'login':
-        return <LoginPage onNavigate={setCurrentPage} onLogin={handleLogin} />;
-      case 'signup':
-        return <SignUpPage onNavigate={setCurrentPage} onLogin={handleLogin} />;
+        return <LoginPage onNavigate={(page) => setCurrentPage(page as Page)} onLogin={handleLogin} />;
+        case 'signup':
+        return <SignUpPage onNavigate={(page) => setCurrentPage(page as Page)} onLogin={handleLogin} />;
       case 'forgot-password':
-        return <ForgotPasswordPage onNavigate={setCurrentPage} onLogin={handleLogin} />;
+        return <ForgotPasswordPage onNavigate={(page) => setCurrentPage(page as Page)} onLogin={handleLogin} />;
       
       // Layout with Header for internal pages
       default:
         // Admin has its own layout/sidebar in its component
         if (currentPage === 'admin-dashboard') {
-          return <AdminDashboard onNavigate={setCurrentPage} />;
+          return <AdminDashboard onNavigate={(page) => setCurrentPage(page as Page)} />;
         }
 
         return (
           <div className="min-h-screen bg-slate-50 flex flex-col">
-            <Header role={userRole} onNavigate={setCurrentPage} />
+            <Header role={userRole} onNavigate={(page) => setCurrentPage(page as Page)} />
             <main className="flex-1">
-              {currentPage === 'home' && <StudentHome onNavigate={setCurrentPage} />}
-              {currentPage === 'course-detail' && <CourseDetailPage onNavigate={setCurrentPage} />}
-              {currentPage === 'video-lesson' && <VideoPage onNavigate={setCurrentPage} />}
-              {currentPage === 'assignment' && <AssignmentPage onNavigate={setCurrentPage} />}
-              {currentPage === 'quiz' && <QuizPage onNavigate={setCurrentPage} />}
-              {currentPage === 'teacher-dashboard' && <TeacherDashboard onNavigate={setCurrentPage} />}
-              {currentPage === 'profile' && <ProfilePage onNavigate={setCurrentPage} />}
+              {currentPage === 'home' && <StudentHome onNavigate={(page) => setCurrentPage(page as Page)} />}
+              {currentPage === 'course-detail' && <CourseDetailPage onNavigate={(page) => setCurrentPage(page as Page)} />}
+              {currentPage === 'video-lesson' && <VideoPage onNavigate={(page) => setCurrentPage(page as Page)} />}
+              {currentPage === 'assignment' && <AssignmentPage onNavigate={(page) => setCurrentPage(page as Page)} />}
+              {currentPage === 'quiz' && <QuizPage onNavigate={(page) => setCurrentPage(page as Page)} />}
+              {currentPage === 'teacher-dashboard' && <TeacherDashboard onNavigate={(page) => setCurrentPage(page as Page)} />}
+              {currentPage === 'profile' && <ProfilePage onNavigate={(page) => setCurrentPage(page as Page)} />}
             </main>
           </div>
         );
